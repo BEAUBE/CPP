@@ -13,13 +13,7 @@ public:
 
     Zombie(std::string ZombieName);
 
-    void announce(){std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;}
+    void Announce();
 
     ~Zombie();
 };
-/*
-Zombie* NewZombie(std::string name) {
-    Zombie* BabyZombie = new Zombie(name);
-    return BabyZombie;
-}
-*/

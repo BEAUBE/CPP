@@ -6,7 +6,7 @@
 /*   By: ajoliet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 13:37:14 by ajoliet           #+#    #+#             */
-/*   Updated: 2023/10/18 17:10:34 by ajoliet          ###   ########.fr       */
+/*   Updated: 2023/10/30 00:53:36 by ajoliet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,16 @@ int main()
 	cout << "Enter a command (ADD, SEARCH, EXIT)" << endl;
 	for (bool b = 0; b == 0;)
 	{
-		getline(cin, str);
+		if (!getline(cin, str))
+			cout << "ouiooiuoiu" << endl;
+//			break;
 		if (str == "ADD")
-			phonebook.newcontact();
-			//cout << "add str" << endl;
+			phonebook.add();
 		else if (str == "SEARCH")
-			phonebook.display();
-			//cout << "print phonebook" << endl;
+			phonebook.search();
 		else if (str == "EXIT")
 			b = 1;
 		else
-			cout << "apprends à écrire t bete ou quoi" << endl;
+			cout << "Please enter a valid command (ADD, SEARCH, EXIT)" << endl;
 	}
 }

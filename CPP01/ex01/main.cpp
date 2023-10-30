@@ -1,28 +1,35 @@
 #include <iostream>
 #include "Zombie.hpp"
-/*
-Zombie* zombieHorde(int N, std::string name)
+
+Zombie*	zombieHorde(int N, std::string name)
 {
-	Zombie[N - 1]	BabyZombies;
-	while (N)
+	Zombie	*zombie;
+	Zombie	*first;
+
+	zombie = new Zombie(name);
+	first = zombie;
+	zombie++;
+	for (int i = 1; i < N; i++)
 	{
-    Zombie BabyZombie = new Zombie(name);
-	N--;
+		zombie = new Zombie(name);
+		zombie++;
 	}
-}
-*/
-void randomChump(std::string name) {
-    Zombie zombie(name);
-    zombie.announce();
+	return (first);
 }
 
-Zombie* NewZombie(std::string name) {
+void	randomChump(std::string name) {
+    Zombie zombie(name);
+    zombie.Announce();
+}
+
+Zombie*	NewZombie(std::string name) {
     Zombie* BabyZombie = new Zombie(name);
     return BabyZombie;}
 
-int main() {
+int	main() {
     Zombie* TheZombie = NewZombie("Bob");
-    TheZombie->announce();
+    TheZombie->Announce();
     randomChump("Alice");
+	zombieHorde(4, "Pat");
     delete TheZombie;
 }

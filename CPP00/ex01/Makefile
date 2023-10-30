@@ -6,7 +6,7 @@
 #    By: ajoliet <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/13 15:23:21 by ajoliet           #+#    #+#              #
-#    Updated: 2023/10/20 08:45:28 by ajoliet          ###   ########.fr        #
+#    Updated: 2023/10/26 13:55:00 by ajoliet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,14 +18,14 @@ SRC = PhoneBook.cpp \
 
 OBJ = $(SRC:%.cpp=%.o)
 
-CC = c++
+CXX = c++
 
-FLAGS = -ggdb -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -ggdb -Wall -Wextra -Werror -std=c++98
 
 all = $(NAME)
 
 $(NAME) : $(OBJ)
-	$(CC) $(FLAGS) -o $(NAME) $(OBJ)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
 
 clean:
 	rm -rf $(OBJ)
