@@ -5,14 +5,14 @@ SRC = main.cpp \
 
 OBJ = $(SRC:%.cpp=%.o)
 
-CC = c++
+CXX = c++
 
-FLAGS = -ggdb -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -ggdb -Wall -Wextra -Werror -std=c++98
 
 all = $(NAME)
 
 $(NAME) : $(OBJ)
-	$(CC) $(FLAGS) -o $(NAME) $(OBJ)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
 
 clean:
 	rm -rf $(OBJ)

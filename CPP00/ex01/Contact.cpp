@@ -6,7 +6,7 @@
 /*   By: ajoliet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 15:50:22 by ajoliet           #+#    #+#             */
-/*   Updated: 2023/11/01 07:02:01 by ajoliet          ###   ########.fr       */
+/*   Updated: 2023/11/01 10:15:59 by ajoliet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,14 @@ void	Contact::DisplayContact(int i)
 		else
 			std::cout << std::setw(10) << Nickname << "|";
 		std::cout << std::endl;
+}
+
+void	Contact::AllInfo() {
+		std::cout << "First Name : " << FirstName << std::endl
+			<< "Last Name : " << LastName << std::endl
+			<< "Nickname : " << Nickname << std::endl
+			<< "Number : " << Number << std::endl
+			<< "Secret : " << Secret << std::endl;
 }
 
 bool	Contact::IsAlright() {

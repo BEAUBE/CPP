@@ -3,7 +3,7 @@
 
 void randomChump(std::string name) {
     Zombie zombie(name);
-    zombie.announce();}
+    zombie.Announce();}
 
 Zombie* NewZombie(std::string name) {
     Zombie* BabyZombie = new Zombie(name);
@@ -11,6 +11,6 @@ Zombie* NewZombie(std::string name) {
 
 int main() {
     Zombie* TheZombie = NewZombie("Bob");
-    TheZombie->announce();
+    TheZombie->Announce();
     randomChump("Alice");
     delete TheZombie;}

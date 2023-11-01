@@ -6,7 +6,7 @@
 /*   By: ajoliet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 18:28:43 by ajoliet           #+#    #+#             */
-/*   Updated: 2023/11/01 06:59:44 by ajoliet          ###   ########.fr       */
+/*   Updated: 2023/11/01 09:38:27 by ajoliet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class Contact {
 		void	SetNumber();
 		void	SetSecret();
 		void	DisplayContact(int i);
+		void	AllInfo();
 		bool	IsAlright();
 	private:
 		std::string	FirstName;

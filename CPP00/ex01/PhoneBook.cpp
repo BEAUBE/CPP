@@ -6,7 +6,7 @@
 /*   By: ajoliet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 15:50:09 by ajoliet           #+#    #+#             */
-/*   Updated: 2023/11/01 07:00:51 by ajoliet          ###   ########.fr       */
+/*   Updated: 2023/11/01 10:22:36 by ajoliet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,26 @@ void	PhoneBook::add()
 		std::cout << "You must fill every information asked to create a new contact" << std::endl;
 }
 
-void	PhoneBook::search()
+int	GoodIndex(std::string str, int NbrContacts)
+{
+	char c;
+	int	n;
+
+	if (str.length() != 1)
+		return (0);
+	c = str[0];
+	if (!isdigit(c))
+		return (0);
+	n = c - '0';
+	if (n > 8 || n < 0 || n > NbrContacts)
+		return (0);
+	return (n);
+}
+
+int	PhoneBook::search()
 {
 	std::string str;
+	int	index;
 
 	std::cout << "-----------------contacts------------------" << std::endl;
 	std::cout << "index_____|first_name|last_name_|nickname__" << std::endl;
@@ -55,6 +72,13 @@ void	PhoneBook::search()
 		contact[i].DisplayContact(i);
 	}
 	std::cout << "enter a contact index to see all details : ";
-	std::cin >> str;
+	if (!getline(std::cin, str))
+		return (0);
+	if (!(index = GoodIndex(str, NbrContacts)))
+		std::cout << "plz enter a valid index" << std::endl;
+	else
+		contact[index - 1].AllInfo();
+//		std::cout << "ouioouiiuoiuoiuoiuoiuoiu" << std::endl;
+	return (1);
+	
 }
-//faire en sorde de pas display le contact

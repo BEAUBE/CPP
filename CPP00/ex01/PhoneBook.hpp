@@ -6,7 +6,7 @@
 /*   By: ajoliet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 15:52:03 by ajoliet           #+#    #+#             */
-/*   Updated: 2023/11/01 06:12:07 by ajoliet          ###   ########.fr       */
+/*   Updated: 2023/11/01 09:27:29 by ajoliet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class PhoneBook {
 		PhoneBook();
 		~PhoneBook();
 		void	add();
-		void	search();
+		int		search();
 		int		NbrContacts;
 	private:
 		Contact contact[8];
