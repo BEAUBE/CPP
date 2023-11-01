@@ -6,7 +6,7 @@
 /*   By: ajoliet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 13:37:14 by ajoliet           #+#    #+#             */
-/*   Updated: 2023/10/30 00:53:36 by ajoliet          ###   ########.fr       */
+/*   Updated: 2023/11/01 07:00:15 by ajoliet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 
 int main()
 {
-	string	str;
+	std::string	str;
 	PhoneBook	phonebook;
 
-	cout << "Enter a command (ADD, SEARCH, EXIT)" << endl;
+	std::cout << "Enter a command (ADD, SEARCH, EXIT)" << std::endl;
 	for (bool b = 0; b == 0;)
 	{
-		if (!getline(cin, str))
-			cout << "ouiooiuoiu" << endl;
+		if (!getline(std::cin, str))
+			std::cout << "ouiooiuoiu" << std::endl;
 //			break;
 		if (str == "ADD")
 			phonebook.add();
@@ -32,6 +32,6 @@ int main()
 		else if (str == "EXIT")
 			b = 1;
 		else
-			cout << "Please enter a valid command (ADD, SEARCH, EXIT)" << endl;
+			std::cout << "Please enter a valid command (ADD, SEARCH, EXIT)" << std::endl;
 	}
 }
