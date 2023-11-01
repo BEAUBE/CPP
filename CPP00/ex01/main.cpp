@@ -6,7 +6,7 @@
 /*   By: ajoliet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 13:37:14 by ajoliet           #+#    #+#             */
-/*   Updated: 2023/11/01 07:00:15 by ajoliet          ###   ########.fr       */
+/*   Updated: 2023/11/01 11:14:28 by ajoliet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ int main()
 	for (bool b = 0; b == 0;)
 	{
 		if (!getline(std::cin, str))
-			std::cout << "ouiooiuoiu" << std::endl;
-//			break;
+			break;
 		if (str == "ADD")
 			phonebook.add();
 		else if (str == "SEARCH")
