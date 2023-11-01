@@ -27,9 +27,16 @@ Zombie*	NewZombie(std::string name) {
     return BabyZombie;}
 
 int	main() {
-    Zombie* TheZombie = NewZombie("Bob");
+    Zombie *TheZombie = NewZombie("Bob");
     TheZombie->Announce();
     randomChump("Alice");
-	zombieHorde(4, "Pat");
+
+	Zombie *Horde =	zombieHorde(4, "Pat");
+	for (int i = 0; i < 4; i++)
+	{
+		Horde->Announce();
+	}
+//	for (int i = 0; i < 4; i++)
+//		delete Horde->Announce();
     delete TheZombie;
 }
