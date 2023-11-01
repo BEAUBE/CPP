@@ -6,7 +6,7 @@
 /*   By: ajoliet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 15:50:22 by ajoliet           #+#    #+#             */
-/*   Updated: 2023/11/01 10:15:59 by ajoliet          ###   ########.fr       */
+/*   Updated: 2023/11/01 17:21:52 by ajoliet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,35 @@ Contact::Contact(){}
 
 Contact::~Contact(){}
 
-void	Contact::SetFirstName() {
+int	Contact::SetFirstName() {
 		std::cout << "What is the first name of this contact ?" << std::endl;
-	getline(std::cin, FirstName); }
+	if (!getline(std::cin, FirstName))
+		return (0);
+	return (1); }
 
-void	Contact::SetLastName() {
+int	Contact::SetLastName() {
 	std::cout << "What is the last name of this contact ?" << std::endl;
-	getline(std::cin, LastName); }
+	if (!getline(std::cin, LastName))
+		return (0);
+	return (1); }
 
-void	Contact::SetNickname() {
+int	Contact::SetNickname() {
 	std::cout << "What is the nickname of this contact ?" << std::endl;
-	getline(std::cin, Nickname); }
+	if (!getline(std::cin, Nickname))
+		return (0);
+	return (1); }
 
-void	Contact::SetNumber() {
+int	Contact::SetNumber() {
 	std::cout << "What is the number of this contact ?" << std::endl;
-	getline(std::cin, Number); }
+	if (!getline(std::cin, Number))
+		return (0);
+	return (1); }
 
-void	Contact::SetSecret() {
+int	Contact::SetSecret() {
 	std::cout << "What is the deepest secret of this contact ?" << std::endl;
-	getline(std::cin, Secret); }
+	if (!getline(std::cin, Secret))
+		return (0);
+	return (1); }
 
 void	Contact::DisplayContact(int i)
 {

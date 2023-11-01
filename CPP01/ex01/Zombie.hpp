@@ -2,7 +2,6 @@
 #include <iostream>
 #include <iomanip>
 #include "Zombie.hpp"
-using namespace std;
 
 class Zombie {
 private:

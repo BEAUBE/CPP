@@ -13,4 +13,5 @@ int main() {
     Zombie* TheZombie = NewZombie("Bob");
     TheZombie->Announce();
     randomChump("Alice");
-    delete TheZombie;}
+    delete TheZombie;
+}

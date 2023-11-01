@@ -6,7 +6,7 @@
 /*   By: ajoliet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 15:50:09 by ajoliet           #+#    #+#             */
-/*   Updated: 2023/11/01 10:22:36 by ajoliet          ###   ########.fr       */
+/*   Updated: 2023/11/01 17:25:29 by ajoliet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,12 @@ void	PhoneBook::add()
 {
 	Contact	tmp;
 	std::cout << "creating new contact..." << std::endl;
-	tmp.SetFirstName();
-	tmp.SetLastName();
-	tmp.SetNickname();
-	tmp.SetNumber();
-	tmp.SetSecret();
+	if (!(tmp.SetFirstName() && tmp.SetLastName() && tmp.SetNickname() && tmp.SetNumber() && tmp.SetSecret()))
+		return ;
 	if (tmp.IsAlright())
 	{
-		contact[7] = contact[6];
-		contact[6] = contact[5];
-		contact[5] = contact[4];
-		contact[4] = contact[3];
-		contact[3] = contact[2];
-		contact[2] = contact[1];
-		contact[1] = contact[0];
+		for (int i = 7; i; i--)
+			contact[i] = contact[i - 1];
 		contact[0] = tmp;
 		std::cout << "Congrats, your contact has been created" << std::endl;
 		NbrContacts += 1;
@@ -78,7 +70,6 @@ int	PhoneBook::search()
 		std::cout << "plz enter a valid index" << std::endl;
 	else
 		contact[index - 1].AllInfo();
-//		std::cout << "ouioouiiuoiuoiuoiuoiuoiu" << std::endl;
 	return (1);
 	
 }
