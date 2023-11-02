@@ -8,5 +8,8 @@ Zombie::Zombie(std::string ZombieName){
 Zombie::~Zombie(){
 	std::cout << name << " has been destroyed!" << std::endl;}
 
+void	Zombie::SetName(std::string name){
+	this->name =  name; }
+
 void Zombie::Announce(){
 	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;}

@@ -3,18 +3,11 @@
 
 Zombie*	zombieHorde(int N, std::string name)
 {
-	Zombie	*zombie;
-	Zombie	*first;
+	Zombie	*zombie = new Zombie[N];
 
-	zombie = new Zombie(name);
-	first = zombie;
-	zombie++;
-	for (int i = 1; i < N; i++)
-	{
-		zombie = new Zombie(name);
-		zombie++;
-	}
-	return (first);
+	for (int i = 0; i < N; i++)
+		zombie[i].SetName(name);
+	return (zombie);
 }
 
 void	randomChump(std::string name) {
@@ -34,9 +27,8 @@ int	main() {
 	Zombie *Horde =	zombieHorde(4, "Pat");
 	for (int i = 0; i < 4; i++)
 	{
-		Horde->Announce();
+		Horde[i].Announce();
 	}
-//	for (int i = 0; i < 4; i++)
-//		delete Horde->Announce();
+		delete []Horde;
     delete TheZombie;
 }

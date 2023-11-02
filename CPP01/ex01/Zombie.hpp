@@ -14,5 +14,7 @@ public:
 
     void Announce();
 
+    void SetName(std::string name);
+
     ~Zombie();
 };
