@@ -6,7 +6,7 @@
 /*   By: ajoliet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 15:50:09 by ajoliet           #+#    #+#             */
-/*   Updated: 2023/11/01 17:25:29 by ajoliet          ###   ########.fr       */
+/*   Updated: 2023/11/03 18:39:35 by ajoliet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	PhoneBook::search()
 	if (!getline(std::cin, str))
 		return (0);
 	if (!(index = GoodIndex(str, NbrContacts)))
-		std::cout << "plz enter a valid index" << std::endl;
+		std::cout << "please enter a valid index" << std::endl;
 	else
 		contact[index - 1].AllInfo();
 	return (1);
