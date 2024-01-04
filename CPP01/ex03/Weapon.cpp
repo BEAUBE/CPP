@@ -3,7 +3,7 @@
 Weapon::Weapon() {}
 
 Weapon::Weapon(std::string weaponName){
-	type = weaponName;
+	this->type = weaponName;
 }
 
 Weapon::~Weapon() {}

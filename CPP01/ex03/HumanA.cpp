@@ -1,10 +1,8 @@
 #include "HumanA.hpp"
 
-HumanA::HumanA() {}
+//use ref
 
-HumanA::HumanA(std::string newName, Weapon newWeapon) {
-	this->Name = newName;
-	this->weapon = newWeapon;
+HumanA::HumanA(std::string newName, Weapon &newWeapon): Name(newName), weapon(newWeapon) {
 }
 
 HumanA::~HumanA() {}

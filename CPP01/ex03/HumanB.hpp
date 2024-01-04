@@ -2,14 +2,15 @@
 #include "HumanA.hpp"
 #include "Weapon.hpp"
 
+//use pointer
+
 class HumanB {
 	private:
 		std::string Name;
-		Weapon weapon;
+		Weapon *weapon;
 	public:	
-		HumanB();
 		HumanB(std::string newName);
 		~HumanB();
-		void setWeapon(Weapon newWeapon);
+		void setWeapon(Weapon &newWeapon);
 		void attack();
 };

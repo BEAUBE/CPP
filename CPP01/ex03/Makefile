@@ -9,7 +9,7 @@ OBJ = $(SRC:%.cpp=%.o)
 
 CXX = c++
 
-CXXFLAGS = -ggdb -std=c++98 # -Wall -Wextra -Werror
+CXXFLAGS = -ggdb -std=c++98 -Wall -Wextra -Werror
 
 all = $(NAME)
 

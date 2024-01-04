@@ -1,13 +1,14 @@
 #pragma once
 #include "Weapon.hpp"
 
+//use ref
+
 class HumanA {
 	private:
 		std::string Name;
-		Weapon weapon;
+		Weapon &weapon;
 	public:	
-		HumanA();
-		HumanA(std::string newName, Weapon weapon);
+		HumanA(std::string newName, Weapon &newWeapon);
 		~HumanA();
 		void attack();
 };
