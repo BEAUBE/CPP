@@ -22,14 +22,12 @@ void Harl::error() {
 }
 
 void Harl::complain(std::string level) {
-	if (level == "debug")
-		this->debug();
-	else if (level == "info")
-		this->info();
-	else if (level == "warning")
-		this->warning();
-	else if (level == "error")
-		this->error();
-	else
-		std::cout << "hey you little cunt, learn how to fucking write something that works, dont put garbage in my code" << std::endl;
+	std::string levelTab[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	void	(Harl::*Tab[4])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	
+	for (int i = 0; i < 4; i++)
+	{
+		if (level == levelTab[i])
+			(this->*Tab[i])();
+	}
 }

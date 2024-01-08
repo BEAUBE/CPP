@@ -4,8 +4,8 @@ int main()
 {
 	Harl Jones;
 
-	Jones.complain("debug");
-	Jones.complain("info");
-	Jones.complain("warning");
-	Jones.complain("error");
+	Jones.complain("DEBUG");
+	Jones.complain("INFO");
+	Jones.complain("WARNING");
+	Jones.complain("ERROR");
 }
