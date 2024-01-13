@@ -26,6 +26,10 @@ class Fixed {
 		Fixed operator++(int);
 		Fixed &operator--(void);
 		Fixed operator--(int);
+		static Fixed &min(Fixed &nbr1, Fixed &nbr2);
+		static Fixed &max(Fixed &nbr1, Fixed &nbr2);
+		static const Fixed &max(const Fixed &nbr1, const Fixed &nbr2);
+		static const Fixed &min(const Fixed &nbr1, const Fixed &nbr2);
 		~Fixed();
 		float toFloat(void) const;
 		int	toInt(void) const;

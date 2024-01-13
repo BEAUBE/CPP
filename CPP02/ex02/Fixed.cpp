@@ -91,6 +91,31 @@ Fixed Fixed::operator--(int) {
 	return (rtrn);
 }
 
+
+Fixed &Fixed::min(Fixed &nbr1, Fixed &nbr2) {
+	if (nbr1 < nbr2)
+		return (nbr1);
+	return (nbr2);
+}
+
+Fixed &Fixed::max(Fixed &nbr1, Fixed &nbr2) {
+	if (nbr1 < nbr2)
+		return (nbr2);
+	return (nbr1);
+}
+
+const Fixed &Fixed::max(const Fixed &nbr1, const Fixed &nbr2) {
+	if (nbr1 < nbr2)
+		return (nbr2);
+	return (nbr1);
+}
+
+const Fixed &Fixed::min(const Fixed &nbr1, const Fixed &nbr2) {
+	if (nbr1 < nbr2)
+		return (nbr1);
+	return (nbr2);
+}
+
 std::ostream &operator<<(std::ostream &stream, const Fixed &fixed) {
 	stream << fixed.toFloat();
 	return (stream);
@@ -99,7 +124,6 @@ std::ostream &operator<<(std::ostream &stream, const Fixed &fixed) {
 //DESTRUCTOR
 
 Fixed::~Fixed() {
-	std::cout << "Destructor called" << std::endl;
 }
 
 //FCTS
