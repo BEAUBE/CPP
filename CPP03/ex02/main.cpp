@@ -1,10 +1,8 @@
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main() {
-
-	std::cout << "take damage, heal, die, try to do something" << std::endl;
-
-	ScavTrap Bob("Bob");
+	FragTrap Bob("Bob");
 
 	Bob.takeDamage(99);
 	Bob.attack("ennemy1");
@@ -13,13 +11,10 @@ int main() {
 	std::cout << "Normally he is dead" << std::endl;
 	Bob.attack("ennemy1");
 	Bob.beRepaired(1);
-	Bob.guardGate();
-	Bob.guardGate();
 
+/*	FragTrap Warrior("Warrior");
 
-/*	ScavTrap Warrior("Warrior");
-
-	for (int i = 0; i < 50; i++)
+	for (int i = 0; i < 51; i++)
 	{
 		Warrior.attack("a branch");
 		Warrior.attack("another branch");
