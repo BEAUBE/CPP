@@ -13,7 +13,7 @@ ClapTrap::ClapTrap(std::string newName) {
 	HitPoints = 10;
 	EnergyPoints = 10;
 	AttackDamage = 0;
-	std::cout << "default constructor called" << std::endl;
+	std::cout << "overloaded ClapTrap constructor called" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap& Model) {
@@ -23,11 +23,13 @@ ClapTrap &ClapTrap::operator=(const ClapTrap& Model) {
 	this->HitPoints = Model.HitPoints;
 	this->EnergyPoints = Model.EnergyPoints;
 	this->AttackDamage = Model.AttackDamage;
+	std::cout << "overload operator= claptrap constructor called" << std::endl;
 	return (*this);
 }
 
 ClapTrap::ClapTrap(const ClapTrap& Model) {
 	*this = Model;
+	std::cout << "copy claptrap constructor called" << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target) {

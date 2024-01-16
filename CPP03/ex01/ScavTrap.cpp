@@ -5,6 +5,7 @@ ScavTrap::ScavTrap(std::string Name) : ClapTrap(Name) {
 	EnergyPoints = 50;
 	AttackDamage = 20;
 	gateInfo = 0;
+	std::cout << "Default ScavTrap constructor called" << std::endl;
 }
 
 ScavTrap::ScavTrap() : ClapTrap() {
@@ -12,10 +13,12 @@ ScavTrap::ScavTrap() : ClapTrap() {
 	EnergyPoints = 50;
 	AttackDamage = 20;
 	gateInfo = 0;
+	std::cout << "Overloaded ScavTrap constructor called" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& Model) {
 	*this = Model;
+	std::cout << "copy ScavTrap constructor called" << std::endl;
 }
 
 ScavTrap &ScavTrap::operator=(const ScavTrap& Model) {
@@ -25,6 +28,7 @@ ScavTrap &ScavTrap::operator=(const ScavTrap& Model) {
 	this->EnergyPoints = Model.EnergyPoints;
 	this->AttackDamage = Model.AttackDamage;
 	this->gateInfo = Model.gateInfo;
+	std::cout << "overload operator= ScavTrap constructor called" << std::endl;
 	return (*this);
 }
 

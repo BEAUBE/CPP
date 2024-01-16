@@ -5,14 +5,30 @@ ClapTrap::ClapTrap(std::string newName) {
 	HitPoints = 10;
 	EnergyPoints = 10;
 	AttackDamage = 0;
-	std::cout << "default constructor called" << std::endl;
+	std::cout << "default ClapTrap constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap() {
 	HitPoints = 10;
 	EnergyPoints = 10;
 	AttackDamage = 0;
-	std::cout << "default constructor called" << std::endl;
+	std::cout << "overloaded ClapTrap constructor called" << std::endl;
+}
+
+ClapTrap &ClapTrap::operator=(const ClapTrap& Model) {
+	if (this == &Model)
+		return (*this);
+	this->Name = Model.Name;
+	this->HitPoints = Model.HitPoints;
+	this->EnergyPoints = Model.EnergyPoints;
+	this->AttackDamage = Model.AttackDamage;
+	std::cout << "overload operator= claptrap constructor called" << std::endl;
+	return (*this);
+}
+
+ClapTrap::ClapTrap(const ClapTrap& Model) {
+	*this = Model;
+	std::cout << "copy claptrap constructor called" << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target) {
@@ -23,20 +39,6 @@ void ClapTrap::attack(const std::string& target) {
 	}
 	else
 		std::cout << "ClapTrap " << Name << " is dead" << std::endl;
-}
-
-ClapTrap::ClapTrap(const ClapTrap& Model) {
-	*this = Model;
-}
-
-ClapTrap &ClapTrap::operator=(const ClapTrap& Model) {
-	if (this == &Model)
-		return (*this);
-	this->Name = Model.Name;
-	this->HitPoints = Model.HitPoints;
-	this->EnergyPoints = Model.EnergyPoints;
-	this->AttackDamage = Model.AttackDamage;
-	return (*this);
 }
 
 void	ClapTrap::takeDamage(unsigned int amount) {
@@ -53,7 +55,7 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 
 void	ClapTrap::beRepaired(unsigned int amount) {
 	if (HitPoints <= 0)
-		std::cout << "ClapTrap " << Name << "does not have any Hitpoints left" << std::endl;
+		std::cout << "ClapTrap " << Name << " does not have any Hitpoints left" << std::endl;
 	else if (EnergyPoints <= 0)
 		std::cout << "ClapTrap " << Name << " does not have any Energypointsleft" << std::endl;
 	else

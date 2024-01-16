@@ -28,7 +28,6 @@ ClapTrap &ClapTrap::operator=(const ClapTrap& Model) {
 	this->HitPoints = Model.HitPoints;
 	this->EnergyPoints = Model.EnergyPoints;
 	this->AttackDamage = Model.EnergyPoints;
-	std::cout << "overload operator= claptrap constructor called" << std::endl;
 	return (*this);
 }
 
