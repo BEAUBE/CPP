@@ -1,7 +1,11 @@
 NAME = a.out
 
 SRC = main.cpp \
-	  Animal.cpp
+	  Animal.cpp \
+	  Dog.cpp \
+	  Cat.cpp \
+	  WrongCat.cpp \
+	  WrongAnimal.cpp 
 
 OBJ = $(SRC:%.cpp=%.o)
 

@@ -33,4 +33,6 @@ void	FragTrap::highFiveGuys(void) {
 	std::cout << Name << " wants to high five the rest of the team" << std::endl;
 }
 
-FragTrap::~FragTrap() {}
+FragTrap::~FragTrap() {
+	std::cout << "default Fragtrap destructor" << std::endl;
+}

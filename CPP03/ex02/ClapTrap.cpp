@@ -67,5 +67,5 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 }
 
 ClapTrap::~ClapTrap() {
-		std::cout << "default destructor called" << std::endl;
+		std::cout << "default claptrap destructor called" << std::endl;
 }

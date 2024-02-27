@@ -10,7 +10,7 @@ int main() {
 	Bob.beRepaired(1);
 	
 	ClapTrap Got = Bob;
-	Got.attack("caca");
+	Got.attack("rien");
 
 	
 	std::cout << std::endl << "out of EnergyPoints" << std::endl;

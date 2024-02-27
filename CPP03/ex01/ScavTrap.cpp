@@ -15,6 +15,17 @@ ScavTrap::ScavTrap() : ClapTrap() {
 	gateInfo = 0;
 	std::cout << "Overloaded ScavTrap constructor called" << std::endl;
 }
+void	ScavTrap::attack(const std::string& target) {
+	if (this->HitPoints <= 0)
+		std::cout << "ScavTrap " << Name << " does not have any Hitpoints left" << std::endl;
+	else if (this->EnergyPoints <= 0)
+		std::cout << "ScavTrap " << Name << " does not have any EnergyPoints left" << std::endl;
+	else
+	{
+		EnergyPoints--;
+		std::cout << "ScavTrap " << Name << " attacks " << target << ", causing " << AttackDamage << " points of damage" << std::endl;
+	}
+}
 
 ScavTrap::ScavTrap(const ScavTrap& Model) {
 	*this = Model;
@@ -42,4 +53,6 @@ void	ScavTrap::guardGate() {
 		std::cout << Name << " is already in Gate keeper mode" << std::endl;
 }
 
-ScavTrap::~ScavTrap() {}
+ScavTrap::~ScavTrap() {
+	std::cout << "default ScavTrap destructor called" << std::endl;
+}

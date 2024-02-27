@@ -20,7 +20,7 @@ ClapTrap::ClapTrap(const ClapTrap& Model) {
 	*this = Model;
 	std::cout << "copy claptrap constructor called" << std::endl;
 }
-//rajouter commentaire sdtout appel constru
+
 ClapTrap &ClapTrap::operator=(const ClapTrap& Model) {
 	if (this == &Model)
 		return (*this);
@@ -33,13 +33,15 @@ ClapTrap &ClapTrap::operator=(const ClapTrap& Model) {
 }
 
 void ClapTrap::attack(const std::string& target) {
-	if (this->HitPoints > 0 && this->EnergyPoints > 0)
+	if (HitPoints <= 0)
+		std::cout << "ClapTrap " << Name << " already have 0 health points" << std::endl;
+	else if (EnergyPoints <= 0)
+		std::cout << "ClapTrap " << Name << " does not have any Energypoints left" << std::endl;
+	else
 	{
 		EnergyPoints--;
 		std::cout << "ClapTrap " << Name << " attacks " << target << ", causing " << AttackDamage << " points of damage" << std::endl;
 	}
-	else
-		std::cout << "ClapTrap " << Name << " is dead" << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount) {
