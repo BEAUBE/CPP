@@ -30,7 +30,10 @@ executeForm(aform const &form)
 essaie d'exec le form messages en consequence
 
 
+!	mettre dans le main de quoi tester les exceptions
 
 
 toujours un bon main on oublie pas, au fur et a mesure
 
+
+pour la forme abstraite, c'est execute qui est a 0 parce que chaque form aura une fonction differente pour chaque type de form

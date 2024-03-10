@@ -2,6 +2,8 @@
 #include <iostream>
 #include "AForm.hpp"
 
+class AForm;
+
 class Bureaucrat {
 	protected:
 		const std::string Name;
@@ -18,6 +20,7 @@ class Bureaucrat {
 		~Bureaucrat();
 
 		void signAForm(AForm &refAForm);
+		void executeForm(AForm const &form);
 
 		void incGrade();
 		void decGrade();

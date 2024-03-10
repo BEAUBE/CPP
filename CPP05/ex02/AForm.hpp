@@ -27,7 +27,13 @@ class AForm {
 				virtual const char *what (void) const throw();
 		};
 
+		class FormNotSigned: public std:: exception {
+			public :
+				virtual const char *what (void) const throw();
+		};
+
 		bool beSigned(Bureaucrat &signatory);
+		virtual void execute(Bureaucrat const &executor) const = 0;
 
 		const std::string &GetName() const ;
 		const bool &GetIsSigned() const ;

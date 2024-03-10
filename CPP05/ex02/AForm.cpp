@@ -58,6 +58,10 @@ const char *AForm::GradeTooHighException::what() const throw() {
 	return ("The grade you asked for is too high (<1)");
 }
 
+const char *AForm::FormNotSigned::what() const throw() {
+	return ("The form is not signed");
+}
+
 AForm::~AForm() {}
 
 std::ostream &operator<<(std::ostream &stream, const AForm &ref) {

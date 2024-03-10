@@ -24,18 +24,18 @@ Bureaucrat::~Bureaucrat() {
 	std::cout << "default Bureaucrat destructor called" << std::endl;
 }
 
-//integrer le throw dans ce bordel, pour que l'excep se lance et dise pourquoi
-void Bureaucrat::signForm(Form &refForm) {
-	if (refForm.GetIsSigned())
-		std::cout << Name << " couldn't sign " << refForm.GetName() << " because it's already signed" << std::endl;
-	else if (refForm.GetSignGrade() < this->Grade)
-		std::cout << Name << " couldn't sign " << refForm.GetName() << " because the grade is not high enough" << std::endl;
-	else 
-	{
-		std::cout << Name << " signed the form " << refForm.GetName() << std::endl;
-		refForm.beSigned(*this);
-//signer le form avec la fonction dans form
-	}
+void Bureaucrat::signAForm(AForm &refAForm) {
+		refAForm.beSigned(*this);
+}
+
+void Bureaucrat::executeForm(AForm const &form) {
+	//si grade bon et form signe
+	if (!form.GetIsSigned())
+		std::cout << "the form " << form.GetName() << " is not signed" << std::endl;
+	else if (form.GetExecGrade() < Grade) 
+		std::cout << "the form " << form.GetName() << " require a higher grade" << std::endl;
+	else
+		form.execute(*this);
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw() {

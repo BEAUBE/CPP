@@ -2,7 +2,10 @@ NAME = a.out
 
 SRC = main.cpp \
 	  Bureaucrat.cpp \
-	  Form.cpp
+	  AForm.cpp \
+	  ShrubberyCreationForm.cpp \
+	  PresidentialPardonForm.cpp \
+	  RobotomyRequestForm.cpp
 
 OBJ = $(SRC:%.cpp=%.o)
 
