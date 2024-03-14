@@ -2,16 +2,12 @@
 
 int main()
 {
-//basic, invalid creations
 	try {
 	Bureaucrat Invalid("Invalid", 155);
 	}
 	catch(Bureaucrat::GradeTooLowException &err) {
 		std::cerr << err.what() << std::endl;	
 	}
-/*	catch (Bureaucrat::GradeTooHighException &err) {
-		std::cerr << err.what() << std::endl;	
-	}*/
 
 	try {
 	Bureaucrat Invalid("Invalid", 0);
@@ -33,14 +29,6 @@ int main()
 	std::cout << "Bob.decGrade = " << Bob << std::endl;
 	Bob.incGrade();
 	std::cout << "Bob.incGrade = " << Bob << std::endl;
-/*	std::cout << "Bob-- = " << Bob-- << std::endl;
-	std::cout << Bob << std::endl;
-	std::cout << "--Bob = " << --Bob << std::endl;
-	std::cout << Bob << std::endl << std::endl;
-	std::cout << "Bob++ = " << Bob++ << std::endl;
-	std::cout << Bob << std::endl;
-	std::cout << "++Bob = " << ++Bob << std::endl;
-	std::cout << Bob << std::endl;*/
 	
 	std::cout << "LIMITS TESTS" << std::endl << std::endl;
 
@@ -61,5 +49,4 @@ int main()
 	}
 	std::cout << "Suzy.decGrade = " << Suzy << std::endl;
 
-	//verif copie profonde
 }

@@ -8,11 +8,6 @@ Form::Form(std::string newName, int newSignGrade, int newExecGrade) : Name(newNa
 		throw Form::GradeTooLowException();
 	else if (newSignGrade < 1 || newExecGrade < 1)
 		throw Form::GradeTooHighException();
-/*	else
-	{
-		signGrade = newSignGrade;
-		execGrade = newExecGrade;
-	}*/
 }
 
 Form	&Form::operator=(const Form &Model) {

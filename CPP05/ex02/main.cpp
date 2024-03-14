@@ -10,33 +10,33 @@ int main()
 		Bureaucrat Master("Master", 1);
 
 		ShrubberyCreationForm First("formMaster");	
-		Master.signAForm(First);
+		Master.signForm(First);
 		Master.executeForm(First);
 
-		PresidentialPardonForm Third("my bad POTUS");	
-		Master.signAForm(Third);
-		Master.executeForm(Third);
-
 		RobotomyRequestForm Second("form2");	
-		Master.signAForm(Second);
+		Master.signForm(Second);
 		Master.executeForm(Second);
 		Master.executeForm(Second);
 		Master.executeForm(Second);
 		Master.executeForm(Second);
 		Master.executeForm(Second);
+
+		PresidentialPardonForm Third("my bad POTUS");	
+		Master.signForm(Third);
+		Master.executeForm(Third);
 	}
 	catch (std::exception &err) {
 		std::cerr << err.what() << std::endl;
 	}
-/*	try {
-		Bureaucrat Master("Master", 1);
+	try {
+		Bureaucrat Master("Master", 0);
 
 		PresidentialPardonForm Scnd("formMaster");	
-		Master.signAForm(Scnd);
+		Master.signForm(Scnd);
 		Master.executeForm(Scnd);
 
 		RobotomyRequestForm Second("form2");	
-		Master.signAForm(Second);
+		Master.signForm(Second);
 		Master.executeForm(Second);
 		Master.executeForm(Second);
 		Master.executeForm(Second);
@@ -45,7 +45,5 @@ int main()
 	}
 	catch (std::exception &err) {
 		std::cerr << err.what() << std::endl;
-	}*/
+	}
 }
-
-// penser a verifier toutes les exceptions

@@ -24,7 +24,7 @@ Bureaucrat::~Bureaucrat() {
 	std::cout << "default Bureaucrat destructor called" << std::endl;
 }
 
-void Bureaucrat::signAForm(AForm &refAForm) {
+void Bureaucrat::signForm(AForm &refAForm) {
 		refAForm.beSigned(*this);
 }
 

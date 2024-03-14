@@ -19,7 +19,7 @@ class Bureaucrat {
 		Bureaucrat operator--(int);
 		~Bureaucrat();
 
-		void signAForm(AForm &refAForm);
+		void signForm(AForm &refAForm);
 		void executeForm(AForm const &form);
 
 		void incGrade();
