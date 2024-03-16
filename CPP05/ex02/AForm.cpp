@@ -51,11 +51,11 @@ const int &AForm::GetExecGrade() const {
 }
 
 const char *AForm::GradeTooLowException::what() const throw() {
-	return ("The grade you asked for is too low (>150)");
+	return ("The grade is too low");
 }
 
 const char *AForm::GradeTooHighException::what() const throw() {
-	return ("The grade you asked for is too high (<1)");
+	return ("The grade is too high");
 }
 
 const char *AForm::FormNotSigned::what() const throw() {

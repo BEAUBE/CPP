@@ -6,7 +6,7 @@
 
 int main()
 {
-	try {
+/*	try {
 		Bureaucrat Master("Master", 1);
 
 		ShrubberyCreationForm First("formMaster");	
@@ -27,21 +27,21 @@ int main()
 	}
 	catch (std::exception &err) {
 		std::cerr << err.what() << std::endl;
-	}
+	}*/
 	try {
-		Bureaucrat Master("Master", 0);
+		Bureaucrat Noob("Noob", 150);
 
 		PresidentialPardonForm Scnd("formMaster");	
-		Master.signForm(Scnd);
-		Master.executeForm(Scnd);
+		Noob.signForm(Scnd);
+		Noob.executeForm(Scnd);
 
 		RobotomyRequestForm Second("form2");	
-		Master.signForm(Second);
-		Master.executeForm(Second);
-		Master.executeForm(Second);
-		Master.executeForm(Second);
-		Master.executeForm(Second);
-		Master.executeForm(Second);
+		Noob.signForm(Second);
+		Noob.executeForm(Second);
+		Noob.executeForm(Second);
+		Noob.executeForm(Second);
+		Noob.executeForm(Second);
+		Noob.executeForm(Second);
 	}
 	catch (std::exception &err) {
 		std::cerr << err.what() << std::endl;
