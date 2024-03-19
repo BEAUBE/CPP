@@ -1,5 +1,9 @@
 class ScalarConverter
 
+inferieur au million !!
+full casts
+
+
 one static method "convert(str)"
 
 !pas instanciable
