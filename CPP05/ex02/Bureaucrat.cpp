@@ -25,7 +25,15 @@ Bureaucrat::~Bureaucrat() {
 }
 
 void Bureaucrat::signForm(AForm &refAForm) {
+	if (refAForm.GetIsSigned())
+		std::cout << Name << " couldn't sign " << refAForm.GetName() << " because it's already signed" << std::endl;
+	else if (refAForm.GetSignGrade() < this->Grade)
+		std::cout << Name << " couldn't sign " << refAForm.GetName() << " because the grade is not high enough" << std::endl;
+	else 
+	{
+		std::cout << Name << " signed the form " << refAForm.GetName() << std::endl;
 		refAForm.beSigned(*this);
+	}
 }
 
 void Bureaucrat::executeForm(AForm const &form) {
@@ -34,8 +42,10 @@ void Bureaucrat::executeForm(AForm const &form) {
 		std::cout << "the form " << form.GetName() << " is not signed" << std::endl;
 	else if (form.GetExecGrade() < Grade) 
 		std::cout << "the form " << form.GetName() << " require a higher grade" << std::endl;
-	else
+	else {
 		form.execute(*this);
+		std::cout << "Bureaucrat " << Name << " executed form " << form.GetName() << std::endl;
+	}
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw() {

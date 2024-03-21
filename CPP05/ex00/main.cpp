@@ -15,15 +15,10 @@ int main()
 	catch (Bureaucrat::GradeTooHighException &err) {
 		std::cerr << err.what() << std::endl;	
 	}
-	catch (Bureaucrat::GradeTooLowException &err) {
-		std::cerr << err.what() << std::endl;	
-	}
 
 	Bureaucrat Bob("Bob", 1);	
-
-
 	
-	std::cout << "incrementation/decrementation, setters, <<overload" << std::endl;
+	std::cout << "incrementation/decrementation" << std::endl;
 	std::cout << "Bob = " << Bob << std::endl;
 	Bob.decGrade();
 	std::cout << "Bob.decGrade = " << Bob << std::endl;

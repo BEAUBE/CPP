@@ -1,5 +1,8 @@
 #pragma once
 #include <iostream>
+#include "AForm.hpp"
+
+class AForm;
 
 class Bureaucrat {
 	protected:
@@ -10,21 +13,24 @@ class Bureaucrat {
 		Bureaucrat(const std::string newName, int newGrade);
 		Bureaucrat(const Bureaucrat &Model);
 		Bureaucrat &operator=(const Bureaucrat &Model);
-		/*Bureaucrat &operator++(void);
+		Bureaucrat &operator++(void);
 		Bureaucrat operator++(int);
 		Bureaucrat &operator--(void);
-		Bureaucrat operator--(int);*/
+		Bureaucrat operator--(int);
 		~Bureaucrat();
+
+		void signForm(AForm &refAForm);
+		void executeForm(AForm const &form);
 
 		void incGrade();
 		void decGrade();
 
-		class GradeTooHighException : public std::exception {
+		class GradeTooLowException : public std::exception {
 			public :
 				virtual const char *what(void) const throw();
 		};
 
-		class GradeTooLowException : public std::exception {
+		class GradeTooHighException : public std::exception {
 			public :
 				virtual const char *what(void) const throw();
 		};

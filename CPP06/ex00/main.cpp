@@ -2,7 +2,6 @@
 
 int main(int ac, char **av)
 {
-	//ScalarConverter test(1);
 	if (ac != 2)
 	{
 		std::cout << "wrong number of arguments" << std::endl;

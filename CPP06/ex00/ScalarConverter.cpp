@@ -62,7 +62,7 @@ void FloatToInt(std::string str) {
 	char **endPtr = NULL;
 	long long res = std::strtoll(str.c_str(), endPtr, 10);
 
-	if (res > 2147483647.0f || res < -2147483648.0f)
+	if (res > 2147483647.0 || res < -2147483648.0)
 	{
 		std::cout << "int: impossible" << std::endl;
 		return ;
@@ -164,7 +164,7 @@ void IntToInt(std::string str) {
 	char **endPtr = NULL;
 	long long res = std::strtoll(str.c_str(), endPtr, 10);
 
-	if (res > 2147483647.0f || res < -2147483648.0f)
+	if (res > 2147483647.0 || res < -2147483648.0)
 	{
 		std::cout << "int: impossible" << std::endl;
 		return ;
@@ -193,8 +193,6 @@ void	IntToDouble(std::string str) {
 }
 
 void ScalarConverter::convert(std::string &str) {
-	std::cout << "Original str : " << str << std::endl;
-
 	if (str == "-inff" || str == "-inf") {
 		std::cout << "char: impossible" << std::endl;
 		std::cout << "int: impossible" << std::endl;
@@ -218,7 +216,6 @@ void ScalarConverter::convert(std::string &str) {
 	}
 	if (str.length() == 1 && !std::isdigit(str[0]))
 	{
-		std::cout << "char detected" << std::endl;
 		if ((str[0] >= 0 && str[0] <= 31) || str[0] == 127)
 		{
 			std::cout << "char : not displayable" << std::endl;
@@ -240,7 +237,6 @@ void ScalarConverter::convert(std::string &str) {
 
 	if (str[str.length() - 1] == 'f')
 	{
-		std::cout << "float detected" << std::endl;
 		if (str.find_last_of(".") != str.find_first_of("."))
 			std::cout << "at least 2 \'.\' in the float, error" << std::endl;
 		else if (str.find_first_of("f") != str.length() - 1)
@@ -264,7 +260,6 @@ void ScalarConverter::convert(std::string &str) {
 	}
 
 	if (str.find_first_of(".") != std::string::npos) {
-		std::cout << "double detected" << std::endl;
 		if (str.find_last_of(".") != str.find_first_of("."))
 			std::cout << "at least 2 \'.\' in the float, error" << std::endl;
 		else if (str.find_last_of(".") == str.length() - 1)
@@ -278,7 +273,6 @@ void ScalarConverter::convert(std::string &str) {
 		}
 		return ;
 	}
-	std::cout << "int detected" << std::endl;
 
 	IntToChar(str);
 	IntToInt(str);
@@ -289,10 +283,3 @@ void ScalarConverter::convert(std::string &str) {
 ScalarConverter::~ScalarConverter() {
 	
 }
-
-/*
-		std::cout << "char: " << std::endl;
-		std::cout << "int: " << std::endl;
-		std::cout << "float: " << std::endl;
-		std::cout << "double: " << std::endl;
-*/

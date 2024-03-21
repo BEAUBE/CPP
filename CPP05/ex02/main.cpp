@@ -6,7 +6,7 @@
 
 int main()
 {
-/*	try {
+	try {
 		Bureaucrat Master("Master", 1);
 
 		ShrubberyCreationForm First("formMaster");	
@@ -27,7 +27,7 @@ int main()
 	}
 	catch (std::exception &err) {
 		std::cerr << err.what() << std::endl;
-	}*/
+	}
 	try {
 		Bureaucrat Noob("Noob", 150);
 
