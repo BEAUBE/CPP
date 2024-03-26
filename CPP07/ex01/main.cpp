@@ -10,4 +10,8 @@ int main() {
 	std::string tab[6] = {"test", "ligne 2", "3","encore une", "presque la fin", "la fin"};
 	::iter(tab, 6, dispElement);
 	}
+	{
+	char tab[4] = {'t', 'e', 's', 't'};
+	::iter(tab, 4, dispElement);
+	}
 }
