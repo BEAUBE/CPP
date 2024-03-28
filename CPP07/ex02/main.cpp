@@ -15,7 +15,7 @@ int main() {
 	std::cout << test2Int[0] << std::endl;
 	std::cout << test2Int[1] << std::endl;
 	std::cout << test2Int[2] << std::endl;
-//	std::cout << test2Int[3] << std::endl;
+	// std::cout << test2Int[3] << std::endl;
 
 	testInt[0] = 1;
 	test2Int[0] = 2;
@@ -32,7 +32,7 @@ int main() {
 		testStr[1] = "est ";
 		testStr[2] = "un ";
 		testStr[3] = "test ";
-//		testStr[1235] = "nontest";
+		// testStr[1235] = "nontest";	
 		std::cout << testStr[0] << testStr[1] << testStr[2] << testStr[3] << std::endl;
 	}
 	catch (std::exception &err)		
