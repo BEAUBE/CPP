@@ -13,7 +13,7 @@ class MutantStack : public std::stack<T> {
 		MutantStack &operator=(const MutantStack &Model) {
 			if (this == &Model)
 				return *this;
-			this->std::stack<T>::operator=(Model);
+			this->c = Model.c;
 			return *this;
 		}
 

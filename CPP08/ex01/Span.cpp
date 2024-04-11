@@ -16,6 +16,7 @@ Span &Span::operator=(const Span &Model) {
 	if (this == &Model)
 		return (*this);
 	N = Model.N;
+	IntVector = Model.IntVector;
 	return (*this);
 }
 
@@ -37,7 +38,7 @@ unsigned int Span::shortestSpan() {
 	int len = IntVector.size() - 2;
 
 	if (IntVector.size() <= 1)
-		throw TooMuchElements();
+		throw NotEnoughElements();
 	std::sort(IntVector.begin(), IntVector.end());
 
 	int tmp = IntVector[1] - IntVector[0];

@@ -8,7 +8,7 @@ int main()
 		sp.addNumber(6);
 		sp.addNumber(3);
 		sp.addNumber(17);
-		sp.addNumber(0);
+		sp.addNumber(7);
 		sp.addNumber(11);
 		//sp.addNumber(12);
 		std::cout << sp.shortestSpan() << std::endl;
