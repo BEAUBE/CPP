@@ -1,0 +1,140 @@
+➜  ex01 git:(main) ✗ make
+c++ -ggdb -Wall -Wextra -Werror -std=c++98   -c -o main.o main.cpp
+In file included from main.cpp:1:
+./RPN.hpp:6:8: error: no template named 'stack' in namespace 'std'
+                std::stack<int> numbers;
+                ~~~~~^
+./RPN.hpp:8:3: error: C++ requires a type specifier for all declarations
+                exec(std::string str);
+                ^
+main.cpp:8:7: error: call to non-static member function without an object argument
+        RPN::exec(av[1]);
+        ~~~~~^~~~
+3 errors generated.
+make: *** [<builtin>: main.o] Error 1
+➜  ex01 git:(main) ✗ m
+c++ -ggdb -Wall -Wextra -Werror -std=c++98   -c -o main.o main.cpp
+In file included from main.cpp:1:
+./RPN.hpp:9:3: error: C++ requires a type specifier for all declarations
+                exec(std::string str);
+                ^
+main.cpp:8:7: error: call to non-static member function without an object argument
+        RPN::exec(av[1]);
+        ~~~~~^~~~
+2 errors generated.
+make: *** [<builtin>: main.o] Error 1
+➜  ex01 git:(main) ✗ mr
+rm -rf main.o BitcoinExchange.o
+rm -rf btc
+c++ -ggdb -Wall -Wextra -Werror -std=c++98   -c -o main.o main.cpp
+In file included from main.cpp:1:
+./RPN.hpp:9:3: error: C++ requires a type specifier for all declarations
+                exec(std::string str);
+                ^
+./RPN.hpp:14:25: error: no type named 'sring' in namespace 'std'; did you mean
+      'string'?
+                static bool exec(std::sring str);
+                                 ~~~~~^~~~~
+                                      string
+/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stringfwd.h:77:33: note: 
+      'string' declared here
+  typedef basic_string<char>    string;   
+                                ^
+2 errors generated.
+make: *** [<builtin>: main.o] Error 1
+➜  ex01 git:(main) ✗ m
+c++ -ggdb -Wall -Wextra -Werror -std=c++98   -c -o main.o main.cpp
+In file included from main.cpp:1:
+./RPN.hpp:9:3: error: C++ requires a type specifier for all declarations
+                exec(std::string str);
+                ^
+1 error generated.
+make: *** [<builtin>: main.o] Error 1
+➜  ex01 git:(main) ✗ m
+c++ -ggdb -Wall -Wextra -Werror -std=c++98   -c -o main.o main.cpp
+In file included from main.cpp:1:
+./RPN.hpp:9:3: error: C++ requires a type specifier for all declarations
+                exec(std::string str);
+                ^
+1 error generated.
+make: *** [<builtin>: main.o] Error 1
+➜  ex01 git:(main) ✗ m
+c++ -ggdb -Wall -Wextra -Werror -std=c++98   -c -o main.o main.cpp
+In file included from main.cpp:1:
+./RPN.hpp:9:3: error: C++ requires a type specifier for all declarations
+                exec(std::string str);
+                ^
+1 error generated.
+make: *** [<builtin>: main.o] Error 1
+➜  ex01 git:(main) ✗ m
+c++ -ggdb -Wall -Wextra -Werror -std=c++98   -c -o main.o main.cpp
+In file included from main.cpp:1:
+./RPN.hpp:9:3: error: C++ requires a type specifier for all declarations
+                exec(std::string str);
+                ^
+1 error generated.
+make: *** [<builtin>: main.o] Error 1
+➜  ex01 git:(main) ✗ m
+c++ -ggdb -Wall -Wextra -Werror -std=c++98   -c -o main.o main.cpp
+make: *** No rule to make target 'BitcoinExchange.o', needed by 'btc'.  Stop.
+➜  ex01 git:(main) ✗ vim Makefile 
+➜  ex01 git:(main) ✗ make
+c++ -ggdb -Wall -Wextra -Werror -std=c++98   -c -o RPN.o RPN.cpp
+RPN.cpp:8:7: error: expression is not assignable
+        this = Model;
+        ~~~~ ^
+RPN.cpp:14:6: error: member reference type 'RPN *' is a pointer; did you mean to
+      use '->'?
+        this.numbers = RPN.getNumbers();
+        ~~~~^
+            ->
+RPN.cpp:14:17: error: 'RPN' does not refer to a value
+        this.numbers = RPN.getNumbers();
+                       ^
+./RPN.hpp:5:7: note: declared here
+class RPN {
+      ^
+RPN.cpp:18:1: error: '~' in destructor name should be after nested name specifier
+~RPN::RPN() {
+^
+      ~
+RPN.cpp:22:22: error: out-of-line definition of 'getNumbers' does not match any
+      declaration in 'RPN'
+std::stack<int> RPN::getNumbers() {
+                     ^~~~~~~~~~
+RPN.cpp:25:1: error: 'static' can only be specified inside the class definition
+static bool     RPN::exec(std::string str) {
+^~~~~~~
+RPN.cpp:25:35: error: unused parameter 'str' [-Werror,-Wunused-parameter]
+static bool     RPN::exec(std::string str) {
+                                      ^
+7 errors generated.
+make: *** [<builtin>: RPN.o] Error 1
+➜  ex01 git:(main) ✗ m
+c++ -ggdb -Wall -Wextra -Werror -std=c++98   -c -o RPN.o RPN.cpp
+RPN.cpp:8:7: error: expression is not assignable
+        this = Model;
+        ~~~~ ^
+RPN.cpp:14:18: error: 'RPN' does not refer to a value
+        this->numbers = RPN.getNumbers();
+                        ^
+./RPN.hpp:5:7: note: declared here
+class RPN {
+      ^
+RPN.cpp:18:1: error: '~' in destructor name should be after nested name specifier
+~RPN::RPN() {
+^
+      ~
+RPN.cpp:22:22: error: out-of-line definition of 'getNumbers' does not match any
+      declaration in 'RPN'
+std::stack<int> RPN::getNumbers() {
+                     ^~~~~~~~~~
+RPN.cpp:25:1: error: 'static' can only be specified inside the class definition
+static bool     RPN::exec(std::string str) {
+^~~~~~~
+RPN.cpp:25:35: error: unused parameter 'str' [-Werror,-Wunused-parameter]
+static bool     RPN::exec(std::string str) {
+                                      ^
+6 errors generated.
+make: *** [<builtin>: RPN.o] Error 1
+➜  ex01 git:(main) ✗  

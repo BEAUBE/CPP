@@ -2,8 +2,11 @@
 
 int main(int ac, char **av) {
 	if (ac != 2) {
-		std::cerr << "RPN needs 1 arg" << std::endl;
+		std::cerr << "Error" << std::endl;
 		return (0);
 	}
-	RPN::exec(av[1]);
+	RPN executor;
+	if (!executor.exec(av[1])) {
+		std::cout << "Error" << std::endl;
+	}
 }

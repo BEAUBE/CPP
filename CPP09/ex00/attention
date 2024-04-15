@@ -1,4 +1,4 @@
-faire des regex pour le premier parsing
+#faire des regex pour le premier parsing
 les virgules en dernier char ?
 2 fois la meme date !
 les max a bien definir
@@ -6,33 +6,33 @@ valeur min a bien definir aussi
 
 
 parsing data.csv:
-	premiere ligne = "date,exchange_rate"
-	pour la suite : (parsDataLine)
-		pas de char interdits (autre que "1234567890-,.")
-		pattern regex 
-		pars Date:
-			annee >= 2009
-			mois !=0 && <=12
-			mois de 30/31 jours
-			annees bisextiles 
-		valeur: 
-			pas de -
-			pas 2 .
+#	premiere ligne = "date,exchange_rate"
+#	pour la suite : (parsDataLine)
+#		pas de char interdits (autre que "1234567890-,.")
+#		pattern regex 
+#		pars Date:
+#			annee >= 2009
+#			mois !=0 && <=12
+#			mois de 30/31 jours
+#			annees bisextiles 
+#		valeur: 
+#			pas de -
+#			pas 2 .
 
 		
 parsing input.csv:
-	premiere ligne = "date,exchange_rate"
-	pour la suite : (parsDataLine)
-		pas de char interdits (autre que "1234567890-,.")
-		pattern regex 
-		pars Date:
-			annee >= 2009
-			mois !=0 && <=12
-			mois de 30/31 jours
-			annees bisextiles 
-		valeur: 
-			pas de -
-			pas 2 .
-			val < 1000
+#	premiere ligne = "date,exchange_rate"
+#	pour la suite : (parsDataLine)
+#		pas de char interdits (autre que "1234567890-,.")
+#		pattern regex 
+#		pars Date:
+#			annee >= 2009
+#			mois !=0 && <=12
+#			mois de 30/31 jours
+#			annees bisextiles 
+#		valeur: 
+#			pas de -
+#			pas 2 .
+#			val < 1000
 
 		

@@ -16,7 +16,6 @@ BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &Model) {
 }
 
 bool parsDataLine(std::string &curLine) {
-	//2x la meme date ?
 	if (curLine.find_first_not_of("1234567890-,.") != std::string::npos)
 		return (0);
 
@@ -139,9 +138,17 @@ bool BitcoinExchange::DBCreation() {
 		if (parsDataLine(curLine)) {
 			strVal = curLine.substr(11, curLine.size() - 11);
 			value = std::strtof(strVal.c_str(), NULL);
+
+			std::map<std::string, float>::iterator it = DB.find(curLine.substr(0, 10));
+			if (it != DB.end()) {
+				file.close();
+				std::cerr << "date present twice" << std::endl;
+				return (0);
+			}
+
 			DB[curLine.substr(0, 10)] = value;
 			
-			std::cout << curLine << " => " << curLine.substr(0, 10) << ", " <<  DB[curLine.substr(0, 10)] <<  std::endl;
+			//std::cout << curLine << " => " << curLine.substr(0, 10) << ", " <<  DB[curLine.substr(0, 10)] <<  std::endl;
 		}
 		else {
 			file.close();
