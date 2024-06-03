@@ -45,7 +45,7 @@ bool	RPN::exec(std::string str) {
 	if (!checkarg(str))
 		return (0);
 
-	int tmp;
+	long int tmp;
 	for (unsigned long i = 0; i < str.size(); i += 2) {
 		if (std::isdigit(str[i]))
 			numbers.push((str[i] - '0'));
@@ -68,6 +68,9 @@ bool	RPN::exec(std::string str) {
 				}
 				numbers.pop();	
 				numbers.push(tmp);
+				if (tmp < -2147483648 || tmp > 2147483647) {
+					return (0);
+				}
 			}
 		}
 	}

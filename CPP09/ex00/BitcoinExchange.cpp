@@ -19,7 +19,7 @@ bool parsDataLine(std::string &curLine) {
 	if (curLine.find_first_not_of("1234567890-,.") != std::string::npos)
 		return (0);
 
-	const char *pattern = "^([0-9]{4})-([0-9]{2})-([0-9]{2}),([0-9]{0,7})(.[0-9]{0,7})$";
+	const char *pattern = "^([0-9]{4})-([0-9]{2})-([0-9]{2}),([0-9]{0,7})(\\.[0-9]{0,7}){0,1}$";
 	regex_t re;
 	
 
@@ -42,11 +42,11 @@ bool parsDataLine(std::string &curLine) {
 		return (0);
 	if (day == 31 && (month == 4 || month == 6 || month == 9 || month == 11))
 		return (0);
-	if (day == 30 && month == 2)
+	if (day >= 30 && month == 2)
 		return (0);
 	if (month == 2 && day == 29) {
-		if ((!(year % 4) && (year % 100)) || !(year % 400))
-		return (0);
+		if (!(!(year % 4) && (year % 100)) || !(year % 400))
+			return (0);
 	}
 
 	std::string strVal = curLine.substr(11, curLine.size() - 11);
@@ -62,7 +62,7 @@ bool parsInputLine(std::string &curLine) {
 		std::cerr << "bad input => " << curLine << std::endl;
 		return (0); }
 
-	const char *pattern = "^([0-9]{4})-([0-9]{2})-([0-9]{2}) | ([0-9]{0,})(.[0-9]{0,7})$";
+	const char *pattern = "^([0-9]{4})-([0-9]{2})-([0-9]{2}) \\| (-){0,1}([0-9]{1,})(\\.[0-9]{0,7}){0,}$";
 	regex_t re;
 	
 
@@ -90,18 +90,18 @@ bool parsInputLine(std::string &curLine) {
 	if (day == 31 && (month == 4 || month == 6 || month == 9 || month == 11)) {
 		std::cerr << "Error: bad input => " << curLine.substr(0, 10) << std::endl;
 		return (0); }
-	if (day == 30 && month == 2) {
+	if (day >= 30 && month == 2) {
 		std::cerr << "Error: bad input => " << curLine.substr(0, 10) << std::endl;
 		return (0); }
 	if (month == 2 && day == 29) {
-		if ((year % 4) || !(year % 100) || (year % 400)) {
+		if (!(!(year % 4) && (year % 100)) || !(year % 400)) {
 			std::cerr << "Error: bad input => " << curLine.substr(0, 10) << std::endl;
 			return (0); }
 	}
 
 	std::string strVal = curLine.substr(13);
 	if (strVal.find_first_of("-") == 0) {
-		std::cerr << "Error: not a positive number => " << curLine.substr(13) << std::endl;
+		std::cerr << "Error: not a positive number" << std::endl;
 		return (0); }
 	if (strVal.find_first_of("-|, ") != std::string::npos) {
 		std::cerr << "Error: bad input: number not allowed => " << curLine.substr(13) << std::endl;
@@ -110,8 +110,8 @@ bool parsInputLine(std::string &curLine) {
 		std::cerr << "Error: bad input: number not allowed => " << curLine.substr(13) << std::endl;
 		return (0); }
 	float value = std::strtof(strVal.c_str(), NULL);
-	if (value > 1000) {
-		std::cerr << "Error: too large a number => " << curLine.substr(13) << std::endl;
+	if (value >= 1000) {
+		std::cerr << "Error: too large a number" << std::endl;
 		return (0); }
 	return (1);
 }
@@ -131,6 +131,7 @@ bool BitcoinExchange::DBCreation() {
 		file.close();
 		return (0);
 	}
+
 	while (getline(file, curLine))
 	{
 		float value;
@@ -148,7 +149,6 @@ bool BitcoinExchange::DBCreation() {
 
 			DB[curLine.substr(0, 10)] = value;
 			
-			//std::cout << curLine << " => " << curLine.substr(0, 10) << ", " <<  DB[curLine.substr(0, 10)] <<  std::endl;
 		}
 		else {
 			file.close();
@@ -164,7 +164,6 @@ void BitcoinExchange::exec(std::string inFile) {
 		std::cerr << "error: couldn't create data base" << std::endl;
 		return ;
 	}
-	std::cout << "DB theorically created successfully" << std::endl;	
 
 	std::fstream file;
 	std::string curLine;
@@ -191,7 +190,6 @@ void BitcoinExchange::exec(std::string inFile) {
 					it--;
 			}
 			val = std::strtof(curLine.substr(13).c_str(), NULL) * it->second;
-			//std::cout << it->second << ", " << std::strtof(curLine.substr(13).c_str(), NULL) << std::endl;
 			std::cout << curLine.substr(0, 10) << " => " << curLine.substr(13) << " = " << val << std::endl;
 		}
 	}
